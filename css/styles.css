@@ -1,0 +1,687 @@
+@font-face {
+  font-family: Open Sans;
+  src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Regular.woff);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Open Sans;
+  src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Bold.woff);
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: Open Sans, arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+} /*в макете нет ссылок с подчёркиванием, обнуляю в начале */
+
+a:hover {
+  text-decoration: underline;
+} /* и возвращаю подчёркивание при наведении */
+
+.visually-hidden {
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+} 
+
+.header {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+.banner {
+  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #000000;
+  opacity: 0.6;
+}
+
+.header-container {
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  width: 1200px;
+  padding: 30px 15px 0;
+  margin: 0 auto;
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-link {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.logo {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 179px;
+  height: 41px;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.menu {
+  display: flex;
+  margin: 0;
+}
+
+.menu-list {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu-list-item {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-list-item:not(:last-child) {
+  margin-right: 40px;
+}
+
+.menu-link {
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.welcome-title {
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding: 102px 217px 124px;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 75px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.whole-container {
+  box-sizing: border-box;
+  width: 1200px;
+  padding: 64px 15px 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.main-container {
+  display: block;
+  width: 780px;
+  margin: 0;
+  padding: 0;
+}
+
+.post {
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  width: 780px;
+}
+
+.post:after {
+	content		: ".";
+	visibility	: hidden;
+	display		: block;
+	height		: 0;
+	clear		: both;
+}
+
+.post:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+.post-img {
+  width: 381px;
+  display: block;
+  margin: 0 30px 5px 0;
+  padding: 0;
+  float: left;
+}
+
+
+.post-category-list {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.post-category-item {
+  display: block;
+  margin: 0 19px 0 0; /* в макете отступы между элементами в первом и пятом постах 19 и 12 пикселей. Нижний отступ 14px становится таковым при обнулении нижнего отступа */
+  padding: 0;
+}
+
+.post-category {
+  color: #b59f5b;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* обнуляем форматирование*/
+.h2-post {
+  display: block;
+  font-size: inherit;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: normal;
+}
+
+.post-title {
+  color: #0f0d0e;
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  display: block;
+  margin: 5px 0 30px;
+}
+
+.post-date-author-block {
+  margin: 0 0 45px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.post-date {
+  display: flex;
+  color: #888888;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  padding: 0;
+  margin: 0 15px 0px 0;
+}
+
+.post-autor {
+  display: flex;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.post-text {
+  margin: 0;
+  padding: 0;
+  color: #0f0d0e;
+  font-family: "Open Sans";
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+/*   ---   САЙДБАР   ---   */
+
+.side-bar {
+  display: block;
+  width: 271px;
+  margin: 0;
+  padding: 0;
+}
+
+.recent-posts {
+  font: inherit; /* заглушка для ПС */
+}
+
+.sidebar-form-block {
+  margin: 0;
+}
+
+.sidebar-form-block:not(:last-child) {
+  margin: 0 0 55px;
+}
+
+.sidebar-header {
+  color: #0f0d0e;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  margin: 0;
+}
+
+.sidebar-header:after {
+  content: "";
+  display: block;
+  margin: 14px auto 24px;
+  width: 66px;
+  height: 3px;
+  background-color: #b59f5b;
+  opacity: 0.4;
+}
+
+.recent-posts-box {
+  margin: 30px 0 0;
+}
+
+.recent-post-box {
+  margin: 0;
+  display: flex;
+}
+
+.recent-post-box:not(:last-child) {
+  margin-bottom: 22px;
+}
+
+.recent-post-img {
+  width: 70px;
+/*
+  height: 70px;
+*/
+}
+
+.recent-post-text-area {
+  margin: 0 0 0 20px;
+}
+
+.recent-post-date {
+  opacity: 0.54;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-weight: 400;
+  display: block;
+}
+
+/*обнуляем базовые стили h3*/
+.recent-post-header {
+  font-size: inherit;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: normal;
+}
+
+.recent-post-header-link {
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  text-transform: uppercase;
+  display: block;
+}
+
+.search-form {
+  font: inherit; /* заглушка для ПС */
+}
+
+.search {
+  margin: 0;
+  padding: 5px 0 0;
+  border: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.search-group {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.field-search {
+  display: block;
+  margin: 0;
+  box-sizing: border-box;
+  border: 0;
+  padding: 18px;
+  width: 222px;
+  height: 48px;
+  background-color: #f4f7f6;
+  opacity: 0.54;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.input-field:focus {
+  outline-color: #c4ac62;
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: -2px;
+}
+
+.button-search::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 48px;
+  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/search.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 18px auto;
+  background-color: #b59f5b;
+}
+
+.button-search {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 48px;
+  height: 48px;
+}
+
+.button-search:hover:before { 
+/*  filter: brightness(110%); не работает в IE. переписал цвет явно*/
+  background-color: #c4ac62;
+}
+
+/*  SUBSCRIBE TO NEWSLETTER  */
+
+.newsletter {
+  font: inherit; /* заглушка для ПС */
+}
+
+.subscribe-group {
+  margin: 0;
+  display: block;
+}
+
+.subscribe-email {
+  width: 270px;
+  height: 48px;
+  box-sizing: border-box;
+  background-color: #f4f7f6;
+  padding: 18px;
+  opacity: 0.54;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0 0 15px;
+  border: 0;
+}
+
+.email-button-submit {
+  display: block;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 270px;
+  height: 48px;
+  border: 0;
+  background-color: #b59f5b;
+}
+
+.email-button-submit:hover { 
+/*  filter: brightness(110%); не работает в IE. переписал цвет явно*/
+  background-color: #c4ac62;
+}
+
+/* TAG CLOUD */
+
+.tag-cloud {
+  font: inherit; /* заглушка для ПС */
+}
+
+.tag-cloud-box {
+  /*обертка для облака тегов*/
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.tag-category-list {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.tag-category-item {
+  display: block;
+  margin: 0px 5px 5px 0;
+  padding: 0;
+}
+
+.sidebar-tag {
+  display: flex;
+  box-sizing: border-box;
+  min-width: 60px;
+  color: #0f0d0e;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-weight: 700;
+  /*
+  height: 30px;
+  */
+  padding: 2px 10px;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  border: 3px solid #eeeeee;
+  background-color: #ffffff;
+}
+
+/*
+декоративная полоса создаётся псевдоклассом с нижним отступом 24. Здесь к этому плюсовались 5 от тегов.
+написал это правило, чтобы убирать отсуп у последних трёх тегов. проверил - работает при разных комбинациях тегов. согласен, что можно просто дописать новый псевдокласс для декоративной полосы, но было интересно решить так. upd: можно вообще приписать отрицательный маржин следующему элементу?
+*/
+
+.tag-category-item:nth-last-child(-n+3) {
+  margin: 0 5px 0 0;
+}
+
+/* CATEGORIES */
+
+.categories-list {
+  font: inherit; /* заглушка для ПС */
+}
+
+.sidebar-categories-list {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+  list-style-type: none;
+  width: 100%;
+  margin: -12px 0 0 0;
+  padding: 0;
+} /* и вот здесь я прочитал про отрицательные margin и открыл шампанское! ведь сколько страданий можно было бы избежать, если бы знать сразу, что margin может быть отрицательным */
+
+
+.sidebar-categories-item {
+  padding: 8px 0 10px;
+  margin: 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.sidebar-categories-item:nth-child(n+2) {
+  padding: 10px 0;
+}
+
+.sidebar-categories-href {
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.sidebar-categories-count {
+  color: #b59f5b;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-weight: 700;
+  vertical-align: super;
+}
+
+/* FOOTER */
+
+.footer-container {
+  box-sizing: border-box;
+  width: 1200px;
+  padding: 0 15px;
+  margin: 70px auto 0;
+}
+
+.footer-socials {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #f4f7f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 29px 0px;
+}
+
+.articles-socials {
+	margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.socials {
+	list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.socials-item {
+	margin: 0 30px 0 0;
+	display: flex;
+}
+
+.socials-item:hover {
+  transform: scale(1.1);
+}
+
+.socials-item:last-child {
+  	margin-right: 30px;
+}
+
+.footer-social-link {
+	display: flex;
+	padding: 0px;
+	min-width: 25px;
+	height: 25px;
+	
+	background-repeat: no-repeat;
+	background-size: 20px;
+	background-position: center;
+}
+
+.social-pinterest {
+  	background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/001-pinterest.svg);
+}
+
+.social-facebook {
+  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/002-facebook-logo.svg);
+}
+
+.social-tumblr {
+  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg);
+}
+
+.social-twitter {
+  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/004-twitter.svg);
+}
+
+.social-instagram {
+  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/005-instagram.svg);
+}
+
+.footer-copyright {
+  display: block;
+  color: #999999;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  margin: 73px auto 35px;
+}
+
